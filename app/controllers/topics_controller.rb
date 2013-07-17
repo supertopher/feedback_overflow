@@ -16,7 +16,6 @@ class TopicsController < ApplicationController
   end
 
   def create
-    p params
     @topic = Topic.create(params[:topic])
     redirect_to topic_url(@topic.slug)
   end
