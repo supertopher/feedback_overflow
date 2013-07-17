@@ -14,4 +14,10 @@ class TopicsController < ApplicationController
   def edit
     @topic = Topic.find_by_slug(params[:stub])
   end
+
+  def create
+    p params
+    @topic = Topic.create(params[:topic])
+    redirect_to topic_url(@topic.slug)
+  end
 end

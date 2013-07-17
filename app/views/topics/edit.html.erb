@@ -1,1 +1,12 @@
+<h1><%= @topic.title %></h1>
 
+<%= form_for @topic do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br />
+
+<%= f.label :content %>
+<%= f.text_area :content %><br />
+
+<%= f.submit "Save" %>
+
+<% end %>
