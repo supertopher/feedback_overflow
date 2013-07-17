@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    p params[:user]
     if @user.save
       flash[:success] = "Sucessfully created a new account"
       redirect_to root_url
