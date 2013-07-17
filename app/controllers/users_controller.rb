@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:success] = "Sucessfully created a new account"
+      sign_in @user
       redirect_to root_url
     else
       render 'new'
