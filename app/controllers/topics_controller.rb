@@ -8,6 +8,10 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find_by_slug(params[:slug])
+    @topic = Topic.find_by_slug(params[:stub])
+  end
+
+  def edit
+    @topic = Topic.find_by_slug(params[:stub])
   end
 end
