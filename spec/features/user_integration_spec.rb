@@ -58,7 +58,10 @@ describe User do
     end
 
     it 'should not be able to upvote a topic' do
-      pending
+      pending("Not implemented fully. bug fixed need to be made")
+       # page.should have_content(0)
+      # click_on('Upvote')
+      # page.should have_content(0)
     end
 
     it 'should see link Sign Up' do
