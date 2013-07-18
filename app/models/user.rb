@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :topics
   has_many :upvotes, through: :topics
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :username, presence: true,
                        uniqueness: true
@@ -14,6 +15,8 @@ class User < ActiveRecord::Base
                        length: { minimum: 6}
 
   validates_confirmation_of :password
+
+
   before_save {self.email = email.downcase}
   before_create :create_remember_token
 
