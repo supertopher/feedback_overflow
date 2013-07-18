@@ -1,7 +1,5 @@
 common: &common
   adapter: postgresql
-  username:
-  password:
   host: localhost
   timeout: 5000
 

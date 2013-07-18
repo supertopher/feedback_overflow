@@ -71,7 +71,7 @@ describe User do
       sign_in(user)
       visit root_path
     end
-    
+
     it 'should see link Logout' do
       page.should have_link('Logout')
     end
@@ -82,6 +82,14 @@ describe User do
 
     it 'should not see link Login' do
       page.should_not have_link('Login')
+    end
+
+    it 'should be able to create a topic' do
+      click_on("Create Topic")
+      fill_in "Title", with: "A New Post"
+      fill_in "Content", with: "This is a new post."
+      click_on "Save"
+      page.should have_content("A New Post")
     end
   end
 
