@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method :sign_in, :signed_in?, :current_user, :sign_out
+  helper_method :signed_in?
 
   def sign_in(user)
     remember_token = User.new_remember_token
