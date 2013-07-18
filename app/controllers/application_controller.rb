@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def is_signed_in
+    if !signed_in?
+      redirect_to login_path
+    end
+  end
+
   def current_user=(user)
     @current_user = user
   end

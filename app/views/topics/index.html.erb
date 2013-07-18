@@ -1,4 +1,9 @@
 <h1>All topics</h1>
-<% @topics.each do |topic| %>
-<%= link_to topic.title, topic_path(topic.slug) %><br />
-<% end %>
+<ul>
+  <% @topics.each do |topic| %>
+    <li>
+      <%= link_to 'Upvote', upvote_path(topic), :class => 'upvote', method: 'post', remote: true %>
+        <span class='upvote_count'><%= topic.upvotes.count %></span><%= link_to topic.title, topic_path(topic.slug) %>
+      </li>
+  <% end %>
+</ul>
