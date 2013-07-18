@@ -11,7 +11,3 @@
 - [ ] User can comment on a comment.
 - [ ] User can tag a topic.
 - [ ] User can vote on whether a topic is specific, actionable, and/or kind.
-<<<<<<< HEAD
-
-=======
->>>>>>> 663b56f22a0b5db01fc154147860152bca11996a
