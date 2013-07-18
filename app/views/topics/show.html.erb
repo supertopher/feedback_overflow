@@ -1,3 +1,17 @@
 <h1><%= @topic.title %></h1>
 
-<%= @topic.content %>
+<p><%= @topic.content %></p>
+
+<h3>Comments</h3>
+<% @topic.comments.each do |comment| %>
+  <%= comment.content %><br>
+<% end %>
+
+<h3>Add a Comment</h3>
+
+<%= form_for @comment do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content %><br />
+  <%= f.hidden_field :topic_id, value: @topic.id %>
+  <%= f.submit "Save" %>
+<% end %>

@@ -10,4 +10,6 @@ FeedbackOverflow::Application.routes.draw do
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#delete'
 
+  resources :comments  
+
 end

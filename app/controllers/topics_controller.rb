@@ -9,6 +9,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find_by_slug(params[:stub])
+    @comment = Comment.new
   end
 
   def edit

@@ -1,6 +1,7 @@
 class Topic < ActiveRecord::Base
   attr_accessible :title, :content
   belongs_to :user
+  has_many :comments
   validates :title, :content, :presence => true
   validates :title, uniqueness: true
   before_create :to_slug
