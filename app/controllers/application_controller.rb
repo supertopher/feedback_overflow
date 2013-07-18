@@ -26,4 +26,9 @@ class ApplicationController < ActionController::Base
     self.current_user = nil
     cookies.delete(:remember_token)
   end
+
+  # This should work for a 404
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end

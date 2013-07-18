@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(:version => 20130717190320) do
   create_table "topics", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "upvotes"
+    t.integer  "upvotes",    :default => 0
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "slug"
   end
 
