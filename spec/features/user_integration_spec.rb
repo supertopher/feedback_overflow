@@ -52,9 +52,13 @@ describe User do
     end
   end
 
-  context "A Not Signed In User" do
+  context "A Not Signed In User", :js => true do
     before(:each) do
       visit root_path
+    end
+
+    it 'should not be able to upvote a topic' do
+      pending
     end
 
     it 'should see link Sign Up' do
@@ -70,6 +74,12 @@ describe User do
     before(:each) do
       sign_in(user)
       visit root_path
+    end
+
+    it 'should be able to upvote a topic' do
+      page.should have_content(0)
+      click_on('Upvote')
+      page.should have_content(1)
     end
 
     it 'should see link Logout' do
