@@ -14,8 +14,9 @@ FactoryGirl.define do
   factory :user_with_topics, :parent => :user do
     after(:create) do |u|
       3.times {
-        create(:topic, :user => u)  
+        create(:topic, :user => u)
       }
     end
   end
+
 end

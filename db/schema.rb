@@ -20,15 +20,23 @@ ActiveRecord::Schema.define(:version => 20130718023602) do
     t.datetime "updated_at", :null => false
   end
 
+ActiveRecord::Schema.define(:version => 20130718033536) do
+
   create_table "topics", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "upvotes",    :default => 0
     t.integer  "user_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "slug"
   end
+
+  create_table "upvotes", :force => true do |t|
+    t.integer "user_id"
+    t.integer "topic_id"
+  end
+
+  add_index "upvotes", ["user_id", "topic_id"], :name => "index_upvotes_on_user_id_and_topic_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"

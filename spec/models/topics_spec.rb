@@ -6,5 +6,4 @@ describe Topic do
   it { should belong_to(:user) }
   it { should validate_presence_of(:title) }
   it { should validate_presence_of(:content) }
-  it {expect(topic.upvotes).to eq 0}
 end
